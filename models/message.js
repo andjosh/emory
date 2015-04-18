@@ -24,7 +24,11 @@ var mongoose = require('mongoose'),
 Message.statics.formatMsg = function (msg){
     var d = msg.created.toLocaleTimeString();
 
-    return [d, msg.subject, msg.text].join('\n');
+    return [
+        ("### " + d), 
+        msg.subject, 
+        ("> " + msg.text)
+    ].join('\n');
 };
 
 module.exports = mongoose.model('Message', Message);
