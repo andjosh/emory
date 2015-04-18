@@ -1,8 +1,5 @@
 // jshint esnext:true
-var mandrill    = require('node-mandrill')(
-        process.env.MANDRILL_APIKEY
-    ),
-    mongoUri    = process.env.MONGOLAB_URI || 
+var mongoUri    = process.env.MONGOLAB_URI || 
         process.env.MONGOHQ_URL || 
         'mongodb://localhost/emory',
     mongoose    = require('mongoose'),

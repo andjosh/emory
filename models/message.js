@@ -13,12 +13,18 @@ var mongoose = require('mongoose'),
         text: String,
         raw: String,
         html: String,
-        from: String,
-        to: String,
+        from_email: String,
+        to: [[String, String]],
         created: {
             type: Date,
             default: new Date()
         }
     });
+
+Message.statics.formatMsg = function (msg){
+    var d = msg.created.toLocaleTimeString();
+
+    return [d, msg.subject, msg.text].join('\n');
+};
 
 module.exports = mongoose.model('Message', Message);
