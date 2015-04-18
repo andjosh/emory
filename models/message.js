@@ -22,7 +22,7 @@ var mongoose = require('mongoose'),
     });
 
 Message.statics.formatMsg = function (msg){
-    var d = msg.created.toLocaleTimeString();
+    var d = msg.created.toDateString();
 
     return [
         ("### " + d), 
