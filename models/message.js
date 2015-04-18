@@ -15,7 +15,10 @@ var mongoose = require('mongoose'),
         html: String,
         from: String,
         to: String,
-        created: (new Date())
+        created: {
+            type: Date,
+            default: new Date()
+        }
     });
 
 module.exports = mongoose.model('Message', Message);
