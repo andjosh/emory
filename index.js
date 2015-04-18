@@ -11,11 +11,13 @@ var mandrill    = require('node-mandrill')(
     koa         = require('koa'),
     compress    = require('koa-compress'),
     route       = require('koa-route'),
+    koaBody     = require('koa-better-body'),
     app         = koa();
 
 mongoose.connect(mongoUri);
 app.use(require('koa-static')(__dirname + '/public'));
 app.use(compress());
+app.use(koaBody());
 
 // logger
 app.use(function *(next){

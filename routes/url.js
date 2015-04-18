@@ -7,7 +7,7 @@ module.exports = function (app, route){
 app.use(route.post('/send', function* () {
     'use strict';
     yield {};
-    console.log(this);
+    console.log(this.request.body);
 }));
 
 };
