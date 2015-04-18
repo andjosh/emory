@@ -1,0 +1,39 @@
+{
+  "name": "emory",
+  "version": "1.0.0",
+  "description": "Emailing my memories",
+  "main": "index.js",
+  "engines": {
+    "node": "0.12.0"
+  },
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test",
+    "start": "node --harmony index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andjosh/emory.git"
+  },
+  "keywords": [
+    "email",
+    "bot"
+  ],
+  "author": "andjosh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andjosh/emory/issues"
+  },
+  "homepage": "https://github.com/andjosh/emory#readme",
+  "devDependencies": {
+    "mocha": "^2.2.4"
+  },
+  "dependencies": {
+    "koa": "^0.19.1",
+    "koa-better-body": "^1.0.17",
+    "koa-compress": "^1.0.8",
+    "koa-route": "^2.4.1",
+    "koa-static": "^1.4.9",
+    "mongoose": "^4.0.1",
+    "node-mandrill": "^1.0.1"
+  }
+}
