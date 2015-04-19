@@ -22,12 +22,14 @@ var mongoose = require('mongoose'),
     });
 
 Message.statics.formatMsg = function (msg){
-    var d = msg.created.toDateString();
+    var d = new Date(),
+        a = (d - msg.created) / (1000 * 60 * 60).toFixed(2),
+        t = msg.text.split('\n').join('\n> ');
 
     return [
-        ("### " + d), 
+        ("### " + d + " days ago"), 
         msg.subject, 
-        ("> " + msg.text)
+        ("> " + t)
     ].join('\n');
 };
 
