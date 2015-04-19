@@ -23,11 +23,11 @@ var mongoose = require('mongoose'),
 
 Message.statics.formatMsg = function (msg){
     var d = new Date(),
-        a = (d - msg.created) / (1000 * 60 * 60).toFixed(2),
+        a = ((d - msg.created) / (1000 * 60 * 60)).toFixed(2),
         t = msg.text.split('\n').join('\n> ');
 
     return [
-        ("### " + a + " days ago"), 
+        ("### " + a + " hours ago"), 
         msg.subject, 
         ("> " + t)
     ].join('\n');
