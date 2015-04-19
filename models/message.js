@@ -27,7 +27,7 @@ Message.statics.formatMsg = function (msg){
         t = msg.text.split('\n').join('\n> ');
 
     return [
-        ("### " + d + " days ago"), 
+        ("### " + a + " days ago"), 
         msg.subject, 
         ("> " + t)
     ].join('\n');
