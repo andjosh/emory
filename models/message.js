@@ -23,7 +23,8 @@ var mongoose = require('mongoose'),
 
 Message.statics.formatMsg = function (msg){
     var d = new Date(),
-        a = ((d.getTime() - msg.created.getTime()) / (1000 * 60 * 60)).toFixed(2),
+        e = new Date(msg.created),
+        a = ((d.getTime() - e.getTime()) / (1000 * 60 * 60)).toFixed(2),
         t = msg.text.split('\n').join('\n> ');
 
     return [
