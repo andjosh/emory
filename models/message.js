@@ -29,6 +29,7 @@ Message.statics.formatMsg = function (msg){
 
     return [
         ("### " + a + " hours ago"), 
+        msg.created,
         msg.subject, 
         ("> " + t)
     ].join('\n');
